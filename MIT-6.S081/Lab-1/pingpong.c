@@ -16,7 +16,7 @@ int main() {
     char *argv[] = {"<pid>:", "recieved", "pong"};
     close(p[1]);
     n = read(p[0], buf, 1) if (n < 0) {}
-    xec("echo", argv);
+    exec("echo", argv);
   }
   exit(0);
 }

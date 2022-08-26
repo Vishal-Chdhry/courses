@@ -36,4 +36,4 @@ build/*
 *.app
 
 # MIT-6.S081
-xv6-riscv/
+MIT-6.S081/xv6-riscv

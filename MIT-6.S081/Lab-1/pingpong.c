@@ -8,15 +8,19 @@ int main() {
   pipe(p);
   if (fork() == 0) {
     char *argv[] = {"<pid>:", "recieved", "ping"};
+    char *args = "1";
     close(p[0]);
-    write(p[1], '1', 1);
+    write(p[1], args, 1);
     close(p[1]);
     exec("echo", argv);
   } else {
     char *argv[] = {"<pid>:", "recieved", "pong"};
     close(p[1]);
-    n = read(p[0], buf, 1) if (n < 0) {}
-    exec("echo", argv);
+    n = read(p[0], buf, 1);
+    close(p[0]);
+    if (n > 0) {
+      exec("echo", argv);
+    }
   }
   exit(0);
 }
